@@ -44,13 +44,13 @@ jobs:
         with:
             context: ./database
         # Note: tags has to be all lower-case
-            tags:  ${{secrets.DOCKERHUB_USERNAME}}/my-database:latest
+            tags:  ${{secrets.DOCKERHUB_USERNAME}}my-database:latest
       
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
           context: ./http-server
         # Note: tags has to be all lower-case
-          tags:  ${{secrets.DOCKERHUB_USERNAME}}/my-httpd:latest
+          tags:  ${{secrets.DOCKERHUB_USERNAME}}my-httpd:latest
       
       
