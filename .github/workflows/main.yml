@@ -22,4 +22,7 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean verify ./simple-api/pom.xml
+        run: |
+          cd ..
+          cd simple-api
+          mvn clean verify -f pom.xml
