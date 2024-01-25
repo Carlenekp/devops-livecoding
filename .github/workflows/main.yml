@@ -60,5 +60,5 @@ jobs:
        with:
         context: ./http-server
       # Note: tags has to be all lower-case
-        tags:  ${{secrets.DOCKER_USERNAME}}my-httpd:latest
+        tags:  ${{secrets.DOCKER_USERNAME}}/my-httpd:latest
         push: ${{ github.ref == 'refs/heads/main' }}
