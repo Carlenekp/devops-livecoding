@@ -24,4 +24,5 @@ jobs:
       - name: Build and test with Maven
         run: |
           cd ..
-          mvn clean verify -f simple-api/pom.xml
+          cd simple-api
+          mvn clean verify
