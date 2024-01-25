@@ -1,4 +1,3 @@
-
 name: CI devops 2023
 on:
   #to begin you want to launch this job in main and develop
@@ -25,10 +24,6 @@ jobs:
         run: |
           cd simple-api
           mvn clean verify
-          
-  build: 
-      runs-on: ubuntu-22.04
-      steps:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -38,7 +33,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
         # relative path to the place where source code with Dockerfile is located
-          context: .
+          context: ./simple-api
         # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKERHUB_USERNAME}}tp-devops-simple-api:latest
           
@@ -55,3 +50,4 @@ jobs:
           context: ./http-server
         # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKERHUB_USERNAME}}my-httpd:latest
+      
